@@ -4,7 +4,7 @@
                     x:ClassModifier="internal">
   <Design.PreviewWith>
     <Border Margin="20, 20, 20, 200">
-      <CalendarDatePicker Width="200" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
+      <CalendarDatePicker Width="200"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
     </Border>
   </Design.PreviewWith>
 

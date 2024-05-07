@@ -35,8 +35,9 @@
                           Content="{TemplateBinding Content}"
                           Margin="{TemplateBinding Padding}"
                           HorizontalContentAlignment="Stretch"
-                          FontSize="12"
-                          VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+                          VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" 
+                          
+                          FontSize="{DynamicResource HeadContentFontSize}"/>
       </ControlTemplate>
     </Setter>
 
@@ -59,7 +60,7 @@
         <TextBlock Text="{Binding}"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
-                   FontSize="11" />
+                   FontSize="{DynamicResource CalendarDayButtonFontSize}" />
       </Template>
     </Setter>
 
@@ -74,7 +75,11 @@
                  basically...MinWidth of DayItem = 40, 40 * 7 = 280 + margins/padding = ~294
                  Viewport height is set from # of rows displayed (2-8) in Month mode, = ~290 for 6 weeks (+ day names)
                  -->
-          <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" RowDefinitions="20,*" MinWidth="160" ShowGridLines="False">
+          <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MinWidth="{DynamicResource HeadContentGridMinWidth}">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="{DynamicResource HeadContentGridRowHeight}"></RowDefinition>
+              <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
             <Grid ColumnDefinitions="5*,*,*">
               <Button Name="PART_HeaderButton"
                       Theme="{StaticResource FluentCalendarButton}"
@@ -90,7 +95,7 @@
                 <!--Path mimics Segoe MDL2 Assets font glyph used in WinUI-->
                 <Path Stroke="{DynamicResource CalendarViewForeground}"
                       StrokeThickness="1.5"
-                      Data="M 0,6 L 6,0 L 12,6"
+                      Data="{DynamicResource CalendarPrevButtonData}"
                       HorizontalAlignment="Center"
                       VerticalAlignment="Center" />
               </Button>
@@ -103,17 +108,17 @@
                 <!--Path mimics Segoe MDL2 Assets font glyph used in WinUI-->
                 <Path Stroke="{DynamicResource CalendarViewForeground}"
                       StrokeThickness="1.5"
-                      Data="M 0,0 L 6,6 L 12,0"
+                      Data="{DynamicResource CalendarNextButtonData}"
                       HorizontalAlignment="Center"
                       VerticalAlignment="Center" />
               </Button>
             </Grid>
             <!--Border below is used only for MonthView but it can't be moved inside of Grid because CalendarItem expects it to be empty and it will cause side-effects-->
-            <Border Name="BackgroundLayer" Background="{TemplateBinding BorderBrush}" Margin="0,40,0,0" IsVisible="{Binding #PART_MonthView.IsVisible}" Grid.Row="1" />
-            <Grid Name="PART_MonthView" Grid.Row="1" IsVisible="False" ShowGridLines="False"  >
+            <Border Name="BackgroundLayer" Background="{TemplateBinding BorderBrush}" Margin="0,38,0,0" IsVisible="{Binding #PART_MonthView.IsVisible}" Grid.Row="1" />
+            <Grid Name="PART_MonthView" Grid.Row="1" IsVisible="False" MinHeight="{DynamicResource MonthViewGridMinHeight}" >
               <Grid.RowDefinitions>
                 <!--This should always be the week day names??-->
-                <RowDefinition Height="Auto" />
+                <RowDefinition Height="{DynamicResource WeekNameRowHeight}" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
@@ -133,7 +138,7 @@
             </Grid>
             <Grid Name="PART_YearView"
                   Background="{TemplateBinding BorderBrush}"
-                  MinHeight="100"
+                  MinHeight="{DynamicResource YearViewGridMinHeight}"
                   Grid.Row="1"
                   IsVisible="False">
               <Grid.RowDefinitions>

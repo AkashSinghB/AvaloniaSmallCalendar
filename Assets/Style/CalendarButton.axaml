@@ -10,14 +10,15 @@
                        Data="M 0,0 L 6,6 L 12,0"
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center" />
+        <CalendarButton/>
       </StackPanel>
     </Border>
   </Design.PreviewWith>
 
   <ControlTheme x:Key="{x:Type CalendarButton}" TargetType="CalendarButton">
     <Setter Property="ClickMode" Value="Release" />
-    <Setter Property="MinWidth" Value="10" />
-    <Setter Property="MinHeight" Value="10" />
+    <Setter Property="MinWidth" Value="{DynamicResource CalendarButtonMinWidth}" />
+    <Setter Property="MinHeight" Value="{DynamicResource CalendarButtonMinHeight}" />
     <Setter Property="Margin" Value="1" />
     <Setter Property="Padding" Value="0,0,0,0" />
     <!--These are actually set on the CalendarView in WinUI-->
@@ -40,7 +41,7 @@
                               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                               Margin="{TemplateBinding Padding}"
-                              FontSize="11"/>
+                              FontSize="{DynamicResource CalendarMonthNameFontSize}"/>
           </Border>
 
           <!-- Drawn Border should render on top of background to preserve the 1px margin between items -->

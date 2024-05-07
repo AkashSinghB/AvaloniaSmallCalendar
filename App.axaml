@@ -21,6 +21,7 @@
         <ResourceInclude Source="avares://AvaloniaCustomCalendar/Assets/Style/CalendarDayButton.axaml"></ResourceInclude>
         <ResourceInclude Source="avares://AvaloniaCustomCalendar/Assets/Style/CalendarButton.axaml"></ResourceInclude>
         <ResourceInclude Source="avares://AvaloniaCustomCalendar/Assets/Style/CalendarDatePicker.axaml"></ResourceInclude>
+        <ResourceInclude Source="avares://AvaloniaCustomCalendar/CalendarStyles/Compact.axaml"></ResourceInclude>
       </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
   </Application.Resources>

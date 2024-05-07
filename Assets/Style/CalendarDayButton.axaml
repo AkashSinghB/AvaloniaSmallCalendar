@@ -13,8 +13,8 @@
 
   <ControlTheme x:Key="{x:Type CalendarDayButton}" TargetType="CalendarDayButton">
     <Setter Property="ClickMode" Value="Release" />
-    <Setter Property="MinWidth" Value="20" />
-    <Setter Property="MinHeight" Value="20" />
+    <Setter Property="MinWidth" Value="{DynamicResource CalendarDayButtonMinWidth}" />
+    <Setter Property="MinHeight" Value="{DynamicResource CalendarDayButtonMinHeight}" />
     <Setter Property="Margin" Value="1" />
     <Setter Property="Padding" Value="0,0,0,0" />
     <!--These are actually set on the CalendarView in WinUI-->
@@ -38,9 +38,7 @@
                               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                               Margin="{TemplateBinding Padding}"
-                              FontSize="12"
-                              
-                              />
+                              FontSize="{DynamicResource CalendarDayButtonContentFontSize}"/>
 
           </Border>
 
