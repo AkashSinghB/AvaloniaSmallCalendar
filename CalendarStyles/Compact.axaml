@@ -5,20 +5,20 @@
   <Design.PreviewWith>
       <Calendar />
   </Design.PreviewWith>
-  <x:Double x:Key="HeadContentFontSize">12</x:Double>
-  <x:Double x:Key="CalendarDayButtonFontSize">11</x:Double>
+  <x:Double x:Key="HeadContentFontSize">11</x:Double>
+  <x:Double x:Key="CalendarDayButtonFontSize">10</x:Double>
   <x:Double x:Key="CalendarMonthNameFontSize">11</x:Double>
-  <x:Double x:Key="CalendarDayButtonContentFontSize">15</x:Double>
-  <GridLength x:Key="HeadContentGridRowHeight">40</GridLength>
-  <x:Double x:Key="HeadContentGridMinWidth">300</x:Double>
+  <x:Double x:Key="CalendarDayButtonContentFontSize">11</x:Double>
+  <GridLength x:Key="HeadContentGridRowHeight">20</GridLength>
+  <x:Double x:Key="HeadContentGridMinWidth">150</x:Double>
   <StreamGeometry x:Key="CalendarPrevButtonData">M 0,6 L 6,0 L 12,6</StreamGeometry>
   <StreamGeometry x:Key="CalendarNextButtonData">M 0,0 L 6,6 L 12,0</StreamGeometry>
-  <GridLength x:Key="WeekNameRowHeight">40</GridLength>
-  <x:Double x:Key="MonthViewGridMinHeight">300</x:Double>
-  <x:Double x:Key="YearViewGridMinHeight">300</x:Double>
-  <x:Double x:Key="CalendarDayButtonMinWidth">40</x:Double>
-  <x:Double x:Key="CalendarDayButtonMinHeight">40</x:Double>
-  <x:Double x:Key="CalendarButtonMinWidth">40</x:Double>
-  <x:Double x:Key="CalendarButtonMinHeight">40</x:Double>
+  <GridLength x:Key="WeekNameRowHeight">15</GridLength>
+  <x:Double x:Key="MonthViewGridMinHeight">150</x:Double>
+  <x:Double x:Key="YearViewGridMinHeight">150</x:Double>
+  <x:Double x:Key="CalendarDayButtonMinWidth">20</x:Double>
+  <x:Double x:Key="CalendarDayButtonMinHeight">20</x:Double>
+  <x:Double x:Key="CalendarButtonMinWidth">10</x:Double>
+  <x:Double x:Key="CalendarButtonMinHeight">10</x:Double>
   
 </ResourceDictionary>
